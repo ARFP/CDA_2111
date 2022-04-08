@@ -34,7 +34,7 @@ export class EmployeeApi {
         let json = await request.json();
         this.jsonEmployees = json.data;
         this.jsonEmployees.forEach(employeeJson => {
-            let employee = new Employee(employeeJson.id, employeeJson.employee_name, employeeJson.employee_age, employeeJson.employee_salary);
+            let employee = new Employee(employeeJson);
             this.listEmployees.push(employee);
         });
 
