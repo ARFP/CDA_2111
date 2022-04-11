@@ -15,7 +15,7 @@ let objectTest =  {
 }
 
 let employee = new Employee(objectTest);
-console.log(employee);
+// console.log(employee);
 
 // On initialise la classe qui gére l'API
 let employeeApi = new EmployeeApi(employeeApiURL);
@@ -59,12 +59,15 @@ employeeApi.fetchDone().then(() => {
     //     console.error(err);
     // }
     let allEmployees = employeeApi.getAll();
-    let testTable = new EmployeesTable();
+
+    let testTable = new EmployeesTable(employeeApi);
+
     const tBody = document.querySelector('tbody');
 
     for(let anEmployee of allEmployees) {
         testTable.createFilledLine(tBody,anEmployee);
     }
+    testTable.setEvent('tbody');
 });
 
 // let testTable = new EmployeesTable();

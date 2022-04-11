@@ -1,6 +1,27 @@
-table, tr, td {
-    border: 1px solid black;
+table {
+    padding: 15px;
+    background-color: black;
+    color: whitesmoke;
 }
+table {
+    border: 1px solid whitesmoke;
+    border-collapse: collapse;
+    line-height: 20px;
+}
+
+tr, td {
+    
+    border-top: 1px solid whitesmoke;
+    border-bottom: 1px solid whitesmoke;
+}
+
+td {
+    padding: 5px 15px;
+}
+
+
+
+
 .delete {
     background-color: rgb(205, 92, 92);
     color: aliceblue;
