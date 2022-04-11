@@ -1,12 +1,13 @@
 import { Employee } from "./modules/Employee.js";
 import { EmployeeApi } from "./modules/EmployeeApi.js";
+import { EmployeesTable } from "./modules/EmployeesTable.js";
 
 const employeeApiURL = "https://arfp.github.io/tp/web/frontend/employees/employees.json"
 
 let objectTest =  {
     id: 24,
     employee_name: "Fabienne Bouilloire",
-    employee_salary: 27,
+    employee_salary: 27000,
     employee_age: 61,
     profile_image: "",
     gender: "unknown",
@@ -41,3 +42,32 @@ employeeApi.fetchDone()
 // let employeeTest = new Employee(100, "Rhona Davidson", 40, 327900);
 
 // console.log(employeeTest);
+
+employeeApi.fetchDone().then(() => {
+    // console.log(employeeApi.get(1));
+    // try{
+    //     employeeApi.delete(1);
+    // }
+    // catch(err) {
+    //     console.error(err);
+    // }
+    // console.log(employeeApi.getAll());
+    // try{
+    //     employeeApi.duplicate(12);
+    // }
+    // catch(err) {
+    //     console.error(err);
+    // }
+    let allEmployees = employeeApi.getAll();
+    let testTable = new EmployeesTable();
+    const tBody = document.querySelector('tbody');
+
+    for(let anEmployee of allEmployees) {
+        testTable.createFilledLine(tBody,anEmployee);
+    }
+});
+
+// let testTable = new EmployeesTable();
+// const tBody = document.querySelector('tbody');
+
+// testTable.createFilledLine(tBody,employee);

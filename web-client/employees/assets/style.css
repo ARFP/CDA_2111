@@ -1,3 +1,11 @@
-table {
+table, tr, td {
     border: 1px solid black;
+}
+.delete {
+    background-color: rgb(205, 92, 92);
+    color: aliceblue;
+}
+.duplicate {
+    background-color: rgb(98, 150, 209);
+    color: aliceblue;
 }

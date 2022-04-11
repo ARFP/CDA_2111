@@ -10,10 +10,16 @@ export class Employee {
     // }
 
     constructor(_employe){
-        ({id: this.id, employee_name: this.fullName, employee_salary: this.salary, profile_image: this.image} = _employe);
+        ({
+            id: this.id,
+            employee_age: this.age,
+            employee_name: this.fullName,
+            employee_salary: this.salary,
+            profile_image: this.image
+        } = _employe);
         this.email = this.setEmail();
         this.monthlySalary = this.setMonthlySalary();
-        this.yearOfBirth = new Date().getFullYear() - _employe.employee_age;
+        this.yearOfBirth = new Date().getFullYear() - this.age;
 
     }
 
