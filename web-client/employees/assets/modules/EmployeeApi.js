@@ -14,7 +14,7 @@ export class EmployeeApi {
      */
     fetchData()
     {
-        this.fetchPromise = this.makeFetch();
+        this.fetchPromise = this.makeFetch(); // ???
     }
 
     /**
@@ -31,7 +31,10 @@ export class EmployeeApi {
     {
         let request = await fetch(this.apiUrl);
         let json = await request.json();
-        this.jsonEmployees = json.data;
+        json.data.forEach(employeeJson => {
+            let employee = new Employee(employeeJson);
+            this.jsonEmployees.push(employee);
+        });
         return json;
     }
 
@@ -43,7 +46,7 @@ export class EmployeeApi {
      */
     fetchDone()
     {
-        return this.fetchPromise;
+        return this.fetchPromise; // on réinvente le rôle de la promesse ? :D
     }
 
     /**
@@ -51,13 +54,7 @@ export class EmployeeApi {
      */
     getAll()
     {
-        let listEmployee = [];
-
-        this.jsonEmployees.forEach(employeeJson => {
-            let employee = new Employee(employeeJson);
-            listEmployee.push(employee);
-        });
-        return listEmployee;
+        return this.jsonEmployees;
     }
 
     /**
@@ -76,8 +73,6 @@ export class EmployeeApi {
             throw new Error(`There is no employee with ID ${_idEmployee}`);
         }
 
-        let employee = new Employee(jsonEmployee);
-
         return employee;
     }
 
@@ -95,17 +90,7 @@ export class EmployeeApi {
             throw new Error(`Your employee has an existing ID ${_employee.id}`);
         }
 
-        let employeeJson = {};
-        
-        ({
-            id: employeeJson.id,
-            fullName: employeeJson.employee_name,
-            age: employeeJson.employee_age,
-            salary: employeeJson.employee_salary,
-            image: employeeJson.profile_image
-        } = _employee);
-
-        this.jsonEmployees.push(employeeJson);
+        this.jsonEmployees.push(new Employee(employeeJson));
     }
 
     /**
@@ -113,12 +98,15 @@ export class EmployeeApi {
      */
     duplicate(_idEmployee)
     {
+        let newEmployee = {}; // cible du clonage
+        let currentEmployee = this.get(_idEmployee);
+        Object.assign(newEmployee, currentEmployee); // clonage de currentEmployee vers newEmployee
         
-        let newId = this.jsonEmployees[this.jsonEmployees.length - 1].id + 1;
-        let newEmployee = this.get(_idEmployee);
-        newEmployee.id = newId;
-        this.post(newEmployee);
+        let newId = Math.max.apply(Math, this.jsonEmployees.map(o => o.id)); // recherche de l'id max
         
+        newEmployee.id = ++newId; // assignation du nouvel identifiant (pre incrémentation = incrémentation avant assignation)
+        
+        this.post(target);        
     }
 
     /**
@@ -127,14 +115,6 @@ export class EmployeeApi {
      */
     delete(_idEmployee)
     {
-        let indexEmployee = this.jsonEmployees.findIndex((employee) => employee.id == _idEmployee);
-       
-        if (indexEmployee === -1) {
-            throw new Error(`The employee with ID ${_idEmployee} is not found for deletion.`);
-        }
-        this.jsonEmployees.splice(indexEmployee, 1);
-        // delete this.jsonEmployees[indexEmployee]; //delete laisse un élément vide dans le tableau et ne le supprime pas
-
-
+        this.jsonEmployees = this.jsonEmployees.filter(employee => employee.id != _idEmployee);
     }
 };
