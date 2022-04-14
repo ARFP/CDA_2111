@@ -1,3 +1,5 @@
+
+
 const myEmployeeJson = "https://arfp.github.io/tp/web/frontend/employees/employees.json"
 
 const myTableData = document.getElementById('columnEntitledTable');
@@ -8,10 +10,25 @@ const arrayHeader = ['EID', 'Full Name', 'Email', 'Monthly salary', 'Year of bir
 
 function createHeader(elem, arrayName) {
     arrayName.forEach(value => {
-        var columnHeader = document.createElement('th');
+        let columnHeader = document.createElement('th');
         columnHeader.textContent = value;
+        if(columnHeader.textContent == 'Monthly salary'){
+            let sortButton = document.createElement('button');
+            sortButton.textContent = 'toto';
+            columnHeader.appendChild(sortButton);
+            sortButton.setAttribute('class', 'myButtonSort');
+        }
         elem.appendChild(columnHeader);
     });
+ 
 }
+
+
+
+
+
+
+
+
 
 createHeader(rowCategoryHeader, arrayHeader);

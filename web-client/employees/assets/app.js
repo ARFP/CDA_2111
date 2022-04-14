@@ -60,17 +60,21 @@ employeeApi.fetchDone().then(() => {
     // }
     let allEmployees = employeeApi.getAll();
 
-    let testTable = new EmployeesTable(employeeApi);
+    
 
     const tBody = document.querySelector('tbody');
+    let testTable = new EmployeesTable(employeeApi, tBody);
+    
+    testTable.setEvent();
+    testTable.generateTableBody();
 
-    for(let anEmployee of allEmployees) {
-        testTable.createFilledLine(tBody,anEmployee);
-    }
-    testTable.setEvent('tbody');
+    // testTable.generateTableSortSalary(true);
+    // testTable.generateTableSortSalary(false);
+    testTable.setEventSort();
+    employeeApi.duplicate(200);
+
 });
 
-// let testTable = new EmployeesTable();
-// const tBody = document.querySelector('tbody');
-
 // testTable.createFilledLine(tBody,employee);
+
+

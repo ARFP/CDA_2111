@@ -73,7 +73,7 @@ export class EmployeeApi {
         let jsonEmployee = this.jsonEmployees.find((employee) => employee.id == _idEmployee);
 
         if (jsonEmployee === undefined) {
-            throw new Error(`There is no employee with ID ${_idEmployee}`);
+            return -1;
         }
 
         let employee = new Employee(jsonEmployee);
@@ -116,9 +116,12 @@ export class EmployeeApi {
         
         let newId = this.jsonEmployees[this.jsonEmployees.length - 1].id + 1;
         let newEmployee = this.get(_idEmployee);
+        if (newEmployee === -1){
+            return false;
+        }
         newEmployee.id = newId;
         this.post(newEmployee);
-        
+        return newEmployee;
     }
 
     /**
@@ -130,11 +133,11 @@ export class EmployeeApi {
         let indexEmployee = this.jsonEmployees.findIndex((employee) => employee.id == _idEmployee);
        
         if (indexEmployee === -1) {
-            throw new Error(`The employee with ID ${_idEmployee} is not found for deletion.`);
+            return false;
         }
-        this.jsonEmployees.splice(indexEmployee, 1);
+        return this.jsonEmployees.splice(indexEmployee, 1);
         // delete this.jsonEmployees[indexEmployee]; //delete laisse un élément vide dans le tableau et ne le supprime pas
-
+        
 
     }
 };
