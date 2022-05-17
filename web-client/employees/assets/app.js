@@ -28,6 +28,7 @@ employeeApi.fetchData();
 // On utilise la methode fetchDone pour récupérer le
 // Résultat de la promesse du fetch réalisé dans
 // l'instance employeeApi.
+// A améliorer, ça fait doublon avec le rôle de la promesse :)
 employeeApi.fetchDone()
     .then(() => {
     // Dans ce block on est sûr d'avoir récupéré tous
@@ -43,6 +44,7 @@ employeeApi.fetchDone()
 
 // console.log(employeeTest);
 
+// idem, à revoir, doublon avec la promise
 employeeApi.fetchDone().then(() => {
     // console.log(employeeApi.get(1));
     // try{
@@ -76,5 +78,4 @@ employeeApi.fetchDone().then(() => {
 });
 
 // testTable.createFilledLine(tBody,employee);
-
 
