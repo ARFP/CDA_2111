@@ -70,7 +70,7 @@ export class EmployeeApi {
         let jsonEmployee = this.jsonEmployees.find((employee) => employee.id == _idEmployee);
 
         if (jsonEmployee === undefined) {
-            throw new Error(`There is no employee with ID ${_idEmployee}`);
+            return -1;
         }
 
         return employee;
@@ -104,17 +104,21 @@ export class EmployeeApi {
         
         let newId = Math.max.apply(Math, this.jsonEmployees.map(o => o.id)); // recherche de l'id max
         
-        newEmployee.id = ++newId; // assignation du nouvel identifiant (pre incrémentation = incrémentation avant assignation)
-        
-        this.post(target);        
+        let newId = this.jsonEmployees[this.jsonEmployees.length - 1].id + 1;
+        let newEmployee = this.get(_idEmployee);
+        if (newEmployee === -1){
+            return false;
+        }
+        newEmployee.id = newId;
+        this.post(newEmployee);
+        return newEmployee;
     }
 
     /**
      * On supprime un employé.
      * @param {*} _idEmployee 
      */
-    delete(_idEmployee)
-    {
+    delete(_idEmployee) {
         this.jsonEmployees = this.jsonEmployees.filter(employee => employee.id != _idEmployee);
     }
 };

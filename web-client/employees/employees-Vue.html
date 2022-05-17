@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employees with VueJS 3</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{message}}</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th @click="sortOnSalaries">monthly salary</th>
+                    <th>year of birth</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="employee in employeesData" :key="id">
+                    <td>{{employee.id}}</td>
+                    <td>{{employee.employee_name}}</td>
+                    <td>{{`${employee.employee_name[0]}.${employee.employee_name.split(' ')[1]}@email.com`.toLowerCase()}}</td>
+                    <td>{{Math.round(employee.employee_salary/12*100)/100}}</td>
+                    <td>{{new Date().getFullYear() - employee.employee_age}}</td>
+                    <td>
+                        <button @click="deleteEmployee(employee)"> X </button>
+                        <button @click="duplicateEmployee(employee)"> + </button>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        {{ countEmployee}}
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        {{ sumAllMonthlySalaries}}
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+
+    </div>
+
+    <script>
+
+    const vue = Vue.createApp({
+        data() {
+            return {
+                message: 'List of employees',
+                employeesData: null,
+                isSorted: false
+            }
+        },
+        computed:  {
+            countEmployee() {
+                if (this.employeesData !== null) {
+                    return this.employeesData.length                    
+                }
+                else {
+                    return 0              
+                }
+            },
+            sumAllMonthlySalaries() {
+                let sum = 0;
+                if (this.employeesData !== null) {
+                    for(employee of this.employeesData){
+                        sum += employee.employee_salary
+                    }
+                    sum = (Math.round(sum/12*100)/100)
+                }
+                return sum
+            }
+        },
+        methods: {
+            async fetchEmployeesData() {
+                this.employeesData = null
+                const res = await fetch(`https://arfp.github.io/tp/web/frontend/employees/employees.json`)
+                const jsonEmp= await res.json()
+                this.employeesData = jsonEmp.data
+            },
+            deleteEmployee(employee) {
+                this.isSorted = false
+                return this.employeesData = this.employeesData.filter((employeeInRow) => employee !== employeeInRow)
+            },
+            duplicateEmployee(employee) {
+                this.isSorted = false
+                // Création d'un id normalement non existant pour le moment
+                let newId = this.employeesData[this.employeesData.length -1].id + 1
+                // Copie employee dans newEmployee sans référence
+                let newEmployee = Object.assign({}, employee)
+                newEmployee.id = newId
+                this.employeesData.push(newEmployee)
+            },
+            sortOnSalaries() {
+                if (!this.isSorted) {
+                    this.employeesData.sort((emp1, emp2) => {
+                        return emp1.employee_salary - emp2.employee_salary
+                    })
+                    this.isSorted = true
+                }
+                else {
+                    this.employeesData.reverse()
+                }
+            }
+        },
+        mounted() {
+            this.fetchEmployeesData()
+        }
+    }).mount('#app')
+    </script>
+    
+</body>
+</html>
