@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: blue;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    display:flex;
+    /*flex-wrap: wrap;
+    flex-direction: row;*/
+    flex-flow: row wrap; /* identique aux 2 déclarations précédentes */
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 10px;
+    background-color: #11111133;
+    color: yellow;
+    /*border: 1px solid transparent;*/
+}
+
+.menu a:hover {
+    background-color: #11111111;
+    /*border-color: currentColor;*/
+    box-shadow: 0px 0px 0px 1px currentColor;
+}
+
+
+main {
+    width: 800px;
+    margin: auto;
+    background: darkgreen;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+}
+
+main article {
+    background-color: orange;
+    width: 32%;
+    display:flex;
+    flex-flow: row wrap;
+    gap: 10px;
+}
+
+main p {
+    background-color: darkmagenta;
+    color: white;
+}
