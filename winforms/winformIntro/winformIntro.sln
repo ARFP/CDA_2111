@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoutonAutomatique", "BoutonAutomatique\BoutonAutomatique.csproj", "{C09AB9E9-772E-43B5-9577-2D4E8973CBD0}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfApp1", "WpfApp1\WpfApp1.csproj", "{88CAC5E2-1B55-452B-8E12-88A382622E17}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationSaisie", "ValidationSaisie\ValidationSaisie.csproj", "{C90ACA4F-0070-4547-BB08-3481BEDFE4BE}"
@@ -19,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C09AB9E9-772E-43B5-9577-2D4E8973CBD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C09AB9E9-772E-43B5-9577-2D4E8973CBD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C09AB9E9-772E-43B5-9577-2D4E8973CBD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C09AB9E9-772E-43B5-9577-2D4E8973CBD0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{88CAC5E2-1B55-452B-8E12-88A382622E17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{88CAC5E2-1B55-452B-8E12-88A382622E17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88CAC5E2-1B55-452B-8E12-88A382622E17}.Release|Any CPU.ActiveCfg = Release|Any CPU
