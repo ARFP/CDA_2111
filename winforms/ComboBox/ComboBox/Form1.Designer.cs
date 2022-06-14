@@ -95,6 +95,7 @@
             // 
             // cbxSource
             // 
+            this.cbxSource.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxSource.FormattingEnabled = true;
             this.cbxSource.Location = new System.Drawing.Point(12, 59);
             this.cbxSource.Name = "cbxSource";
@@ -139,7 +140,7 @@
             this.btnMoveUp.TabIndex = 7;
             this.btnMoveUp.Text = "move up";
             this.btnMoveUp.UseVisualStyleBackColor = true;
-            this.btnMoveUp.Click += new System.EventHandler(this.btnMoveUp_Click);
+            this.btnMoveUp.Click += new System.EventHandler(this.btnMove_Click);
             // 
             // btnRemoveAll
             // 
@@ -155,11 +156,11 @@
             // 
             this.btnMovedown.Location = new System.Drawing.Point(319, 204);
             this.btnMovedown.Name = "btnMovedown";
-            this.btnMovedown.Size = new System.Drawing.Size(75, 23);
+            this.btnMovedown.Size = new System.Drawing.Size(80, 23);
             this.btnMovedown.TabIndex = 9;
             this.btnMovedown.Text = "move down";
             this.btnMovedown.UseVisualStyleBackColor = true;
-            this.btnMovedown.Click += new System.EventHandler(this.btnMovedown_Click);
+            this.btnMovedown.Click += new System.EventHandler(this.btnMove_Click);
             // 
             // Form1
             // 

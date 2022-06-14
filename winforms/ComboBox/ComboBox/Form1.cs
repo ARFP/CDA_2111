@@ -20,6 +20,9 @@ namespace ComboBox
             };
             cbxSource.DataSource = manager.Source;
             lbxTarget.DataSource = manager.Target;
+
+            btnMovedown.Tag = 2;
+            btnMoveUp.Tag = -1;
         }
 
         private void btnAddOne_Click(object sender, EventArgs e)
@@ -55,17 +58,19 @@ namespace ComboBox
 
         private void btnRemoveAll_Click(object sender, EventArgs e)
         {
-
+            manager.ReverseMoveAll();
         }
 
-        private void btnMoveUp_Click(object sender, EventArgs e)
+        private void btnMove_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnMovedown_Click(object sender, EventArgs e)
-        {
-
+            if (sender is Control control)
+            {
+                lbxTarget.SelectedIndex =
+                    manager.MoveItem(
+                        lbxTarget.SelectedIndex,
+                        (int)control.Tag
+                );
+            }
         }
     }
 }

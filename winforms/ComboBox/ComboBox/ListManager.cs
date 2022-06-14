@@ -14,7 +14,7 @@ namespace ComboBox
 
         public ListManager() {}
 
-        public void ReverseList()
+        private void ReverseList()
         {
             BindingList<string> tmp = Source;
             Source = Target;
@@ -25,6 +25,13 @@ namespace ComboBox
         {
             ReverseList();
             MoveOne(index);
+            ReverseList();
+        }
+
+        public void ReverseMoveAll()
+        {
+            ReverseList();
+            MoveAll();
             ReverseList();
         }
 
@@ -57,5 +64,45 @@ namespace ComboBox
             Target.Reverse();*/
         }
 
+        /*public void MoveItemUp(int index)
+        {
+            if (index >= 0 && index < Target.Count - 1)
+            {
+                string tmp = Target[index];
+
+            }
+        }
+
+        public void MoveItemDown(int index)
+        {
+            
+        }*/
+        /// <summary>
+        /// Déplacer un élément d'une liste d'un certain nombre d'index (offset)
+        /// </summary>
+        /// <param name="index">Index de l'élement à déplacer</param>
+        /// <param name="offset">Nombre d'index à déplacer</param>
+        /// <returns>Retourne l'index du nouvel emplacement ou l'index actuel si aucun déplacement n'a été effectué</returns>
+        public int MoveItem(int index, int offset)
+        {
+            int newIndex = index + offset;
+
+            if (offset != 0
+                && index >= 0
+                && index <= Target.Count - 1
+                && newIndex <= Target.Count
+                && newIndex >= 0)
+            {
+                int oldIndex = offset > 0 ? index : index + 1;
+                
+                string tmp = Target[index];
+                Target.Insert(newIndex, tmp);
+                Target.RemoveAt(oldIndex);
+
+                return offset > 0 ? newIndex - 1 : newIndex;
+            }
+
+            return index;
+        }
     }
 }
