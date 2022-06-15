@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComboBox", "ComboBox\ComboBox.csproj", "{CAF8D2F1-06EF-451A-AA52-86D2BBD57345}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComboBox", "ComboBox\ComboBox.csproj", "{CAF8D2F1-06EF-451A-AA52-86D2BBD57345}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Defilement", "Defilement\Defilement.csproj", "{374C7126-79E6-4875-90A9-40B703479B97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{CAF8D2F1-06EF-451A-AA52-86D2BBD57345}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAF8D2F1-06EF-451A-AA52-86D2BBD57345}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAF8D2F1-06EF-451A-AA52-86D2BBD57345}.Release|Any CPU.Build.0 = Release|Any CPU
+		{374C7126-79E6-4875-90A9-40B703479B97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{374C7126-79E6-4875-90A9-40B703479B97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{374C7126-79E6-4875-90A9-40B703479B97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{374C7126-79E6-4875-90A9-40B703479B97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
