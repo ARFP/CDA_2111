@@ -36,6 +36,17 @@ namespace Defilement
                 Defilement toto = (Defilement)upDown.Tag;
                 toto.ChangeValue(upDown.Value);
             }
+
+            SetFinalColor();
+        }
+
+        private void SetFinalColor()
+        {
+            lblResultColor.BackColor = Color.FromArgb(
+                hsbRedValue.Value,
+                hsbGreenValue.Value,
+                hsbBlueValue.Value
+            );
         }
     }
 }
