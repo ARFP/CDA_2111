@@ -1,4 +1,4 @@
-﻿namespace LoanUI
+﻿namespace LoanUI.Loan
 {
     public class Loan
     {

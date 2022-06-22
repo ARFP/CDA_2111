@@ -1,25 +1,124 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="LoanUI.MainForm">
-    <Position X="2" Y="1" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>MainForm.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="LoanUI.Loan">
-    <Position X="5.5" Y="1.25" Width="2" />
+  <Class Name="LoanUI.Loan.Loan">
+    <Position X="10.75" Y="2.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAABIAAAAAAAAAAAAAAAAQAAAEAgAQAA=</HashCode>
-      <FileName>Loan.cs</FileName>
+      <FileName>Loan\Loan.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Enum Name="LoanUI.Periodicity">
-    <Position X="8" Y="1.75" Width="1.5" />
+  <Class Name="LoanUI.Loan.Periodicity">
+    <Position X="3.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAkAAAEABAAAAA=</HashCode>
-      <FileName>Periodicity.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAQAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Loan\Periodicity.cs</FileName>
     </TypeIdentifier>
-  </Enum>
+  </Class>
+  <Class Name="LoanUI.LoanControl.Input.AnnualInterestRateControl">
+    <Position X="7" Y="9.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>LoanControl\Input\AnnualInterestRateControl.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LoanUI.LoanControl.Input.CapitalLoanControl">
+    <Position X="5.25" Y="6" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LoanControl\Input\CapitalLoanControl.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LoanUI.LoanControl.Input.RepaymentMonthControl">
+    <Position X="5.5" Y="2" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAQABAAIAAABAAAAAAAAQAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>LoanControl\Input\RepaymentMonthControl.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LoanUI.LoanControl.Input.RepaymentPeriodicityControl">
+    <Position X="2.75" Y="7.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEIAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LoanControl\Input\RepaymentPeriodicityControl.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="periodicityUsed" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LoanUI.LoanControl.Output.AmountRepaymentControl">
+    <Position X="9.75" Y="7.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LoanControl\Output\AmountRepaymentControl.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LoanUI.LoanControl.Output.NumberRepaymentControl">
+    <Position X="8" Y="2.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LoanControl\Output\NumberRepaymentControl.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LoanUI.MVC.LoanController">
+    <Position X="10.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MVC\LoanController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoanUI.MVC.LoanViewModel">
+    <Position X="7.75" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAIAAAAAACAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>MVC\LoanViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoanUI.MainForm">
+    <Position X="0.5" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACkAQEUCABAABAEACAFQQCAQCEBAAAAAAgQAABQAA=</HashCode>
+      <FileName>MainForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="periodicityUsed" />
+    </ShowAsAssociation>
+  </Class>
+  <Interface Name="LoanUI.LoanControl.ILoanOutputString">
+    <Position X="8.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LoanControl\ILoanOutputString.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="LoanUI.LoanControl.ILoanInputInt">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LoanControl\ILoanInputInt.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="LoanUI.LoanControl.ILoanInputLong">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LoanControl\ILoanInputLong.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="LoanUI.LoanControl.ILoanInputPeriodicity">
+    <Position X="2.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LoanControl\ILoanInputPeriodicity.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
