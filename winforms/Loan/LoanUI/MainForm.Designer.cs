@@ -91,9 +91,9 @@
             this.labelNbMois.AutoSize = true;
             this.labelNbMois.Location = new System.Drawing.Point(153, 156);
             this.labelNbMois.Name = "labelNbMois";
-            this.labelNbMois.Size = new System.Drawing.Size(64, 15);
+            this.labelNbMois.Size = new System.Drawing.Size(13, 15);
             this.labelNbMois.TabIndex = 5;
-            this.labelNbMois.Text = "Nb_month";
+            this.labelNbMois.Text = "0";
             // 
             // ScrBarDuree
             // 
@@ -104,7 +104,6 @@
             this.ScrBarDuree.Size = new System.Drawing.Size(161, 22);
             this.ScrBarDuree.TabIndex = 6;
             this.ScrBarDuree.Value = 1;
-            //this.ScrBarDuree.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ScrBarDuree_Scroll);
             // 
             // gbxInterets
             // 
@@ -195,18 +194,18 @@
             this.labelNbRb.AutoSize = true;
             this.labelNbRb.Location = new System.Drawing.Point(384, 220);
             this.labelNbRb.Name = "labelNbRb";
-            this.labelNbRb.Size = new System.Drawing.Size(56, 15);
+            this.labelNbRb.Size = new System.Drawing.Size(13, 15);
             this.labelNbRb.TabIndex = 12;
-            this.labelNbRb.Text = "Ils sont là";
+            this.labelNbRb.Text = "0";
             // 
             // labelMontantRb
             // 
             this.labelMontantRb.AutoSize = true;
             this.labelMontantRb.Location = new System.Drawing.Point(512, 262);
             this.labelMontantRb.Name = "labelMontantRb";
-            this.labelMontantRb.Size = new System.Drawing.Size(56, 15);
+            this.labelMontantRb.Size = new System.Drawing.Size(13, 15);
             this.labelMontantRb.TabIndex = 13;
-            this.labelMontantRb.Text = "Ils sont là";
+            this.labelMontantRb.Text = "0";
             // 
             // labelRb
             // 
