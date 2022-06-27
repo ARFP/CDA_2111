@@ -38,7 +38,7 @@
             this.labelNbRp = new System.Windows.Forms.Label();
             this.labelAmountRp = new System.Windows.Forms.Label();
             this.labelRp = new System.Windows.Forms.Label();
-            this.periodUserControl1 = new LoanUI.UserControls.PeriodUserControl();
+            this.periodUserControl = new LoanUI.UserControls.PeriodUserControl();
             this.gbxInterests.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,6 +98,7 @@
             this.Rb9.Tag = "0,09";
             this.Rb9.Text = "9 %";
             this.Rb9.UseVisualStyleBackColor = true;
+            this.Rb9.CheckedChanged += new System.EventHandler(this.Interest_CheckedChanged);
             // 
             // Rb8
             // 
@@ -110,6 +111,7 @@
             this.Rb8.Tag = "0,08";
             this.Rb8.Text = "8 %";
             this.Rb8.UseVisualStyleBackColor = true;
+            this.Rb8.CheckedChanged += new System.EventHandler(this.Interest_CheckedChanged);
             // 
             // Rb7
             // 
@@ -122,6 +124,7 @@
             this.Rb7.Tag = "0,07";
             this.Rb7.Text = "7 %";
             this.Rb7.UseVisualStyleBackColor = true;
+            this.Rb7.CheckedChanged += new System.EventHandler(this.Interest_CheckedChanged);
             // 
             // btnOk
             // 
@@ -168,19 +171,19 @@
             this.labelRp.TabIndex = 14;
             this.labelRp.Text = "Remboursements";
             // 
-            // periodUserControl1
+            // periodUserControl
             // 
-            this.periodUserControl1.Location = new System.Drawing.Point(12, 146);
-            this.periodUserControl1.Name = "periodUserControl1";
-            this.periodUserControl1.Size = new System.Drawing.Size(245, 162);
-            this.periodUserControl1.TabIndex = 15;
+            this.periodUserControl.Location = new System.Drawing.Point(12, 146);
+            this.periodUserControl.Name = "periodUserControl";
+            this.periodUserControl.Size = new System.Drawing.Size(245, 162);
+            this.periodUserControl.TabIndex = 15;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(651, 350);
-            this.Controls.Add(this.periodUserControl1);
+            this.Controls.Add(this.periodUserControl);
             this.Controls.Add(this.labelRp);
             this.Controls.Add(this.labelAmountRp);
             this.Controls.Add(this.labelNbRp);
@@ -214,6 +217,6 @@
         private Label labelNbRp;
         private Label labelAmountRp;
         private Label labelRp;
-        private UserControls.PeriodUserControl periodUserControl1;
+        private UserControls.PeriodUserControl periodUserControl;
     }
 }

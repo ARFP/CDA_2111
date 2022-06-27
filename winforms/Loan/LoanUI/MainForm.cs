@@ -1,77 +1,47 @@
-using LoanUI.Loan;
-using LoanUI.LoanControl.Input;
-using System.Diagnostics;
+using LoanUI.Models;
+using System.ComponentModel;
 
 namespace LoanUI
 {
     public partial class MainForm : Form
     {
-       /* public readonly Periodicity[] periodicityUsed = new Periodicity[]
-        {
-            new Periodicity("Mensuelle", 1),
-            new Periodicity("Bimestrielle", 2),
-            new Periodicity("Trimestrielle", 3),
-            new Periodicity("Semestrielle", 6),
-            new Periodicity("Annuelle", 12),
-            new Periodicity("Xoxo", 24)
-        };
-
-        RepaymentPeriodicityControl repaymentPeriodicityControl;
-        CapitalLoanControl capitalLoanControl;
-        AnnualInterestRateControl annualInterestControl;
-        RepaymentMonthControl repaymentMonthControl;*/
+        private Loan loan;
 
         public MainForm()
         {
             InitializeComponent();
-
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-           /* repaymentPeriodicityControl = new RepaymentPeriodicityControl(
-                lbxPeriod,
-                periodicityUsed,
-                periodicityUsed[0]
-            );
-            capitalLoanControl = new CapitalLoanControl(tbxCapital);
-            annualInterestControl = new AnnualInterestRateControl(gbxInterests);
-            repaymentMonthControl = new RepaymentMonthControl(
-                ScrBarDuration,
-                repaymentPeriodicityControl,
-                labelNbMonth
-            );
-
-            this.lbxPeriod.SelectedIndexChanged += lbxPeriode_SelectedIndexChanged;*/
-        }
-
-        private void ScrBarDuree_Scroll(object sender, ScrollEventArgs e)
-        {
-            /*repaymentMonthControl.UpdateUI();*/
-        }
-
-        private void lbxPeriode_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           /* repaymentMonthControl.UpdateUI();*/
+            loan = Loan.GetInstance();
+            loan.OnUpdate += LoanUpdated;
         }
 
         private void tbxCapital_TextChanged(object sender, EventArgs e)
         {
-            double capital;
-
-            if(!double.TryParse(tbxCapital.Text, out capital))
+            long capital;
+            if(!long.TryParse(tbxCapital.Text, out capital))
             {
                 return;
             }
+            loan.Capital = capital;
+        }
 
-            foreach (Control ctrl in gbxInterests.Controls)
+        private void Interest_CheckedChanged(object sender, EventArgs e)
+        {
+            if(sender is RadioButton rb)
             {
-                RadioButton rb = (RadioButton)ctrl;
+                loan.SetAnnualInterestRate(float.Parse(rb.Tag.ToString()));
+            }            
+        }
 
-                if(rb.Checked)
-                {
-                    labelAmountRp.Text = (capital + capital * float.Parse(rb.Tag.ToString())).ToString();
-                }
+        private void LoanUpdated(object sender, PropertyChangedEventArgs e)
+        {
+            if(sender is Loan loanSender)
+            {
+                labelNbRp.Text = loanSender.NumberRepayments.ToString();
+                labelRp.Text = loanSender.GetSumPerPeriodicity().ToString();
             }
         }
     }

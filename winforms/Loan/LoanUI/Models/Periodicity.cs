@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LoanUI.Loan
+namespace LoanUI.Models
 {
     public class Periodicity
     {

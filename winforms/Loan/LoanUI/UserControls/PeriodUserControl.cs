@@ -1,4 +1,4 @@
-﻿using LoanUI.Loan;
+﻿using LoanUI.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +13,8 @@ namespace LoanUI.UserControls
 {
     public partial class PeriodUserControl : UserControl
     {
+        public Loan Loan { get; set; }
+
         public int NbMonths 
         { 
             get 
@@ -39,23 +41,14 @@ namespace LoanUI.UserControls
             new Periodicity("Xoxo", 24)
         };
 
-
-
         public PeriodUserControl()
         {
             InitializeComponent();
         }
 
-        // PropertyChangedEventHandler
-        // https://docs.microsoft.com/en-us/dotnet/desktop/wpf/data/how-to-implement-property-change-notification?view=netframeworkdesktop-4.8
-        public void OnValuesUpdated(object sender, EventArgs e) 
-        {
-            MessageBox.Show("TOTO is not XOXO");
-        }
-
-
         private void PeriodUserControl_Load(object sender, EventArgs e)
         {
+            Loan = Loan.GetInstance();
             lbPeriodicity.DataSource = periodicityUsed;
         }
 
@@ -66,12 +59,14 @@ namespace LoanUI.UserControls
             sbNbMonths.LargeChange = Period * 2;
             sbNbMonths.Maximum = 360 + (sbNbMonths.LargeChange - 1);
             sbNbMonths.Value = sbNbMonths.Minimum;
+            Loan.Periodicity = Period;
             sbNbMonths_ValueChanged(sbNbMonths, new EventArgs());
         }
 
         private void sbNbMonths_ValueChanged(object sender, EventArgs e)
         {
             labelNbMonths.Text = sbNbMonths.Value.ToString();
+            Loan.SetNumberMonths(NbMonths);
         }
     }
 }
