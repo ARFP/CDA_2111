@@ -9,7 +9,7 @@ namespace LoanUI
 
         public MainForm()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
 
         private void MainForm_Load(object sender, EventArgs e)
