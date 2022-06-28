@@ -1,4 +1,5 @@
 using DemoMdiContainer.Apps;
+using DemoMdiContainer.Lib;
 
 namespace DemoMdiContainer
 {
@@ -38,7 +39,9 @@ namespace DemoMdiContainer
 
         private void menuDemo_Click(object sender, EventArgs e)
         {
-            List<Form> result = launchedApps.FindAll(f => f is FrmDemo);
+            FormBuilder<FrmDemo> builder = new(this);
+            builder.CreateInstance().Show();
+           /* List<Form> result = launchedApps.FindAll(f => f is FrmDemo);
 
             int id = result.Count + 1;
 
@@ -50,7 +53,7 @@ namespace DemoMdiContainer
             demo.WindowState = FormWindowState.Maximized;
             launchedApps.Add(demo);
             demo.FormClosing += App_Closing;
-            demo.Show();
+            demo.Show();*/
         }
 
         private void menuDefil_Click(object sender, EventArgs e)
