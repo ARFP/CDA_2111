@@ -5,12 +5,16 @@ namespace DemoMdiContainer
 {
     public partial class FrmMenu : Form
     {
-        List<Form> launchedApps;
 
         public FrmMenu()
         {
             InitializeComponent();
-            launchedApps = new List<Form>();
+        }
+
+        private void FrmMenu_Load(object sender, EventArgs e)
+        {
+            menuDemo.Tag = new FormBuilder<FrmDemo>(this);
+            menuDefil.Tag = new FormBuilder<FrmDefilement>(this);
         }
 
         private void menuSignIn_Click(object sender, EventArgs e)
@@ -37,49 +41,24 @@ namespace DemoMdiContainer
             }
         }
 
-        private void menuDemo_Click(object sender, EventArgs e)
+        private void menuAppClick(object sender, EventArgs e)
         {
-            FormBuilder<FrmDemo> builder = new(this);
-            builder.CreateInstance().Show();
-           /* List<Form> result = launchedApps.FindAll(f => f is FrmDemo);
+            ToolStripMenuItem myMenu = (ToolStripMenuItem) sender;
 
-            int id = result.Count + 1;
+            IFormBuilder myFormBuilder = (IFormBuilder)myMenu.Tag;
 
-            Form demo = new FrmDemo();
-            demo.Text += " N°" + id;
-            demo.MdiParent = this;
-            demo.MaximizeBox = false;
-            demo.MinimizeBox = false;
-            demo.WindowState = FormWindowState.Maximized;
-            launchedApps.Add(demo);
-            demo.FormClosing += App_Closing;
-            demo.Show();*/
-        }
-
-        private void menuDefil_Click(object sender, EventArgs e)
-        {
-            List<Form> result = launchedApps.FindAll(f => f is FrmDefilement);
-
-            int id = result.Count + 1;
-
-            Form defil = new FrmDefilement();
-            defil.Text += " N°" + id;
-            defil.MdiParent = this;
-            defil.MaximizeBox = false;
-            defil.MinimizeBox = false;
-            defil.WindowState = FormWindowState.Maximized;
-            launchedApps.Add(defil);
-            defil.FormClosing += App_Closing;
-            defil.Show();
-        }
+            myFormBuilder.CreateInstance().Show();
+        }       
 
         public void App_Closing(object sender, FormClosingEventArgs e)
         {
             if(sender is Form form)
             {
                 // MessageBox.Show(form.GetHashCode().ToString());
-                launchedApps.Remove(form);
+                //launchedApps.Remove(form);
             }
         }
+
+        
     }
 }

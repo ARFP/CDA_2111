@@ -93,7 +93,7 @@
             this.menuDemo.Size = new System.Drawing.Size(180, 22);
             this.menuDemo.Tag = "0";
             this.menuDemo.Text = "Démo";
-            this.menuDemo.Click += new System.EventHandler(this.menuDemo_Click);
+            this.menuDemo.Click += new System.EventHandler(this.menuAppClick);
             // 
             // menuStep2
             // 
@@ -117,7 +117,7 @@
             this.menuDefil.Size = new System.Drawing.Size(180, 22);
             this.menuDefil.Tag = "0";
             this.menuDefil.Text = "Défilement";
-            this.menuDefil.Click += new System.EventHandler(this.menuDefil_Click);
+            this.menuDefil.Click += new System.EventHandler(this.menuAppClick);
             // 
             // menuWindows
             // 
@@ -136,6 +136,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmMenu";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FrmMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

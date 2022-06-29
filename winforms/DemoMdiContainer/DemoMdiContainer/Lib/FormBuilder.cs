@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DemoMdiContainer.Lib
 {
-    internal class FormBuilder<T> where T:Form,new()
+    internal class FormBuilder<T> : IFormBuilder where T : Form, new()
     {
         private Form parentForm;
         private int index;
@@ -17,15 +17,20 @@ namespace DemoMdiContainer.Lib
             this.parentForm = parentForm;
         }
 
-        public T CreateInstance()
+        public Form CreateInstance()
         {
             T f = new T();
             f.Text += " N°" + ++index;
             f.MdiParent = parentForm;
             f.MaximizeBox = false;
             f.MinimizeBox = false;
-            f.WindowState = FormWindowState.Maximized;
+            f.WindowState = FormWindowState.Normal;
             return f;
+        }
+
+        public void Toto()
+        {
+
         }
     }
 }
