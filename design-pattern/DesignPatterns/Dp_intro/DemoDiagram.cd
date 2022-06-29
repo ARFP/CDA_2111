@@ -1,15 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Dp_intro.Models.Batiment" Collapsed="true">
-    <Position X="1.25" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
-      <FileName>Models\Batiment.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
   <Class Name="Dp_intro.Models.BienImmobilier" Collapsed="true">
-    <Position X="3.5" Y="1.75" Width="1.5" />
+    <Position X="3.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAABAAQAAAABAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\BienImmobilier.cs</FileName>
@@ -17,35 +9,43 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Dp_intro.Models.Bureau" Collapsed="true">
-    <Position X="5.75" Y="3.5" Width="1.5" />
+    <Position X="6" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAQAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AIAAAAAAAAAAAAAAAAAQAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Bureau.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Dp_intro.Models.CabinetMedical" Collapsed="true">
-    <Position X="3.75" Y="3.5" Width="1.5" />
+    <Position X="4" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAABA=</HashCode>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAABA=</HashCode>
       <FileName>Models\CabinetMedical.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Dp_intro.Models.LocalCommercial" Collapsed="true">
-    <Position X="1.75" Y="3.5" Width="1.5" />
+    <Position X="2" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
       <FileName>Models\LocalCommercial.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="Dp_intro.Interfaces.IBatiment" Collapsed="true">
-    <Position X="1.25" Y="0.5" Width="1.5" />
+  <Class Name="Dp_intro.Models.Batiment" Collapsed="true">
+    <Position X="1.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Models\Batiment.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Dp_intro.Interfaces.IBatiment">
+    <Position X="1.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IBatiment.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Dp_intro.Interfaces.IBienImmobilier" Collapsed="true">
-    <Position X="3.5" Y="0.5" Width="1.5" />
+  <Interface Name="Dp_intro.Interfaces.IBienImmobilier">
+    <Position X="3.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IBienImmobilier.cs</FileName>

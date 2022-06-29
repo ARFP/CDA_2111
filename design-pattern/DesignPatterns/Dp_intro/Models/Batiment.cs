@@ -7,13 +7,18 @@ using System.Threading.Tasks;
 
 namespace Dp_intro.Models
 {
-    internal class Batiment : IBatiment
+    public class Batiment : IBatiment
     {
         private int superficie;
 
         public Batiment(int superficie)
         {
             this.superficie = superficie;
+        }
+
+        public int SuperficieTotale()
+        {
+            return superficie;
         }
     }
 }

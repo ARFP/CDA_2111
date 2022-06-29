@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dp_intro.Interfaces
 {
-    internal interface IBienImmobilier
+    public interface IBienImmobilier
     {
         int Loyer();
     }

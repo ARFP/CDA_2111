@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dp_intro.Interfaces
+namespace Dp_intro.Interfaces 
 {
-    public interface IBatiment
+    public interface IVisitable 
     {
-        int SuperficieTotale();
+        void Accept(IVisiteur visitor);
     }
 }
