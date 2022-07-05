@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json;
 
 namespace HttpServerExample
 {
@@ -37,11 +38,16 @@ namespace HttpServerExample
 
         public void OnRequest(object? request)
         {
-            if(request is HttpListenerContext ctx)
+            if(request is HttpListenerContext ctx) 
             {
-                string r = "<html>Bonjour !</html>";
+                // string r = "<html>Bonjour !</html>";
+                List<Car> cars = Car.getCars();
 
-                byte[] rep = Encoding.UTF8.GetBytes(r.ToCharArray());
+                string json = JsonSerializer.Serialize(cars);
+
+                // List<Car> newCars = JsonSerializer.Deserialize<List<Car>>(json);
+
+                byte[] rep = Encoding.UTF8.GetBytes(json.ToCharArray());
 
                 ctx.Response.Close(rep, true);
             }

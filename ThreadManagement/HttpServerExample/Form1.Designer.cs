@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnStart = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtLog = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnStart
@@ -47,20 +47,20 @@
             this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
-            // textBox1
+            // txtLog
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 79);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(560, 214);
-            this.textBox1.TabIndex = 2;
+            this.txtLog.Location = new System.Drawing.Point(12, 79);
+            this.txtLog.Multiline = true;
+            this.txtLog.Name = "txtLog";
+            this.txtLog.Size = new System.Drawing.Size(560, 214);
+            this.txtLog.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 305);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtLog);
             this.Controls.Add(this.btnStart);
             this.Name = "Form1";
             this.Text = "HttpServer";
@@ -73,6 +73,6 @@
         #endregion
 
         private Button btnStart;
-        private TextBox textBox1;
+        private TextBox txtLog;
     }
 }

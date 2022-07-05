@@ -24,14 +24,16 @@ namespace ThreadManagement
         private void btn_Click(object sender, EventArgs e)
         {
             Thread thread = new Thread(AddText);
-            Thread thread2 = new Thread(AddText2);
+            //Thread thread2 = new Thread(AddText2);
             thread.Start();
-            thread2.Start("Salut");
+           // thread2.Start("Salut");
         }
 
         private void AddText()
         {
             Thread.Sleep(5000);
+
+            //txtResult.Text += "Yeah ";
 
             this.Invoke(new MethodInvoker(() => {
                 txtResult.Text += "Yeah ";
