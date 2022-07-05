@@ -16,5 +16,10 @@ namespace DemoMdiContainer
         {
             InitializeComponent();
         }
+
+        private void FrmDemo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MessageBox.Show("TOTO");
+        }
     }
 }

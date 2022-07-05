@@ -22,6 +22,7 @@ namespace DemoMdiContainer.Lib
             T f = new T();
             f.Text += " N°" + ++index;
             f.MdiParent = parentForm;
+            // f.FormClosing += ((FrmMenu)parentForm).App_Closing;
             f.MaximizeBox = false;
             f.MinimizeBox = false;
             f.WindowState = FormWindowState.Normal;

@@ -47,15 +47,22 @@ namespace DemoMdiContainer
 
             IFormBuilder myFormBuilder = (IFormBuilder)myMenu.Tag;
 
-            myFormBuilder.CreateInstance().Show();
+            Form form = myFormBuilder.CreateInstance();
+
+            form.FormClosing += this.App_Closing;
+
+            labelLastWindow.Text = form.Text;
+
+            form.Show();
+
+            // myFormBuilder.CreateInstance().Show();
         }       
 
-        public void App_Closing(object sender, FormClosingEventArgs e)
+        public void App_Closing(object? sender, FormClosingEventArgs e)
         {
             if(sender is Form form)
             {
-                // MessageBox.Show(form.GetHashCode().ToString());
-                //launchedApps.Remove(form);
+                labelLastWindow.Text = form.Text + " fermé";
             }
         }
 
