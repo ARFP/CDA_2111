@@ -29,33 +29,50 @@
         private void InitializeComponent()
         {
             this.btnStart = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnStart
             // 
+            this.btnStart.BackColor = System.Drawing.Color.DarkRed;
+            this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStart.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnStart.ForeColor = System.Drawing.SystemColors.Control;
             this.btnStart.Location = new System.Drawing.Point(12, 12);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(75, 23);
             this.btnStart.TabIndex = 0;
+            this.btnStart.Tag = "0";
             this.btnStart.Text = "Start Server";
-            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(12, 79);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(560, 214);
+            this.textBox1.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(584, 305);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnStart);
             this.Name = "Form1";
             this.Text = "HttpServer";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private Button btnStart;
+        private TextBox textBox1;
     }
 }

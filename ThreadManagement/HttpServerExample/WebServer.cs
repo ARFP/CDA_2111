@@ -9,7 +9,7 @@ namespace HttpServerExample
 {
     public class WebServer
     {
-        Boolean running;
+        public Boolean Running { get; private set; }
         HttpListener server;
 
         public async void Start()
@@ -18,9 +18,9 @@ namespace HttpServerExample
             {
                 server.Prefixes.Add("http://localhost:8000/");
                 server.Start();
-                running = true;
+                Running = true;
 
-                while(running)
+                while(Running)
                 {
                     var context = await server.GetContextAsync();
 
@@ -32,10 +32,10 @@ namespace HttpServerExample
 
         public void Stop()
         {
-            running = false;
+            Running = false;
         }
 
-        public void OnRequest(object request)
+        public void OnRequest(object? request)
         {
             if(request is HttpListenerContext ctx)
             {
