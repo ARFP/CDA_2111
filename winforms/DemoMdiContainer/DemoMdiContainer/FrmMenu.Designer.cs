@@ -35,6 +35,7 @@
             this.menuStep1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDemo = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStep2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuValidation = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStep3 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDefil = new System.Windows.Forms.ToolStripMenuItem();
             this.menuWindows = new System.Windows.Forms.ToolStripMenuItem();
@@ -101,10 +102,19 @@
             // 
             // menuStep2
             // 
+            this.menuStep2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuValidation});
             this.menuStep2.Enabled = false;
             this.menuStep2.Name = "menuStep2";
             this.menuStep2.Size = new System.Drawing.Size(59, 20);
             this.menuStep2.Text = "Phase 2";
+            // 
+            // menuValidation
+            // 
+            this.menuValidation.Name = "menuValidation";
+            this.menuValidation.Size = new System.Drawing.Size(180, 22);
+            this.menuValidation.Text = "Validation Saisie";
+            this.menuValidation.Click += new System.EventHandler(this.menuAppClick);
             // 
             // menuStep3
             // 
@@ -181,5 +191,6 @@
         private ToolStripMenuItem menuDefil;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel labelLastWindow;
+        private ToolStripMenuItem menuValidation;
     }
 }

@@ -5,7 +5,6 @@ namespace DemoMdiContainer
 {
     public partial class FrmMenu : Form
     {
-
         public FrmMenu()
         {
             InitializeComponent();
@@ -15,6 +14,8 @@ namespace DemoMdiContainer
         {
             menuDemo.Tag = new FormBuilder<FrmDemo>(this);
             menuDefil.Tag = new FormBuilder<FrmDefilement>(this);
+            menuValidation.Tag = new FormBuilder<FrmValidationSaisie>(this);
+            
         }
 
         private void menuSignIn_Click(object sender, EventArgs e)
