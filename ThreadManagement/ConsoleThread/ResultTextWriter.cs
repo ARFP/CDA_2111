@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace ConsoleThread
 {
-
     public interface IWriter
     {
         void WriteResult(int result);
