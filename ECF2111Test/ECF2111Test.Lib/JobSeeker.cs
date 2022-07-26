@@ -32,9 +32,14 @@ namespace ECF2111Test.Lib
             Id = ++lastId;
         }
 
-        public JobSeeker(JobSeeker other)
+        public JobSeeker(JobSeeker other): this() // "this()" pour initialiser l'Id
         {
-            Id = other.Id;
+            /**
+             * On retire cette instruction:
+             * on souhaite un Id différent par instance
+             */
+            //Id = other.Id;
+
             Name = other.Name;
             Firstname = other.Firstname;
             RegistrationYear = other.RegistrationYear;
