@@ -12,4 +12,10 @@
     <ProjectReference Include="..\ECF2111Test.Lib\ECF2111Test.Lib.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="FrmDemandeurEmploi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>

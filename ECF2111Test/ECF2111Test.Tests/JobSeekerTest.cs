@@ -1,4 +1,5 @@
 using ECF2111Test.Lib;
+using ECF2111Test.Lib.Validation;
 
 namespace ECF2111Test.Tests
 {
@@ -18,7 +19,11 @@ namespace ECF2111Test.Tests
         [TestMethod]
         public void Test_copy()
         {
-            JobSeeker j1 = new JobSeeker();
+            JobSeekerAddViewModel j1 = new JobSeekerAddViewModel()
+            {
+                Name = "Toto"
+            };
+
             JobSeeker j2 = new JobSeeker(j1);
 
             Assert.AreEqual(j1.Name, j2.Name);
@@ -27,8 +32,8 @@ namespace ECF2111Test.Tests
             Assert.AreEqual(j1.Level, j2.Level);
             Assert.AreEqual(j1.LastDiplomaName, j2.LastDiplomaName);
             Assert.AreEqual(j1.LastDiplomaYear, j2.LastDiplomaYear);
-            Assert.AreEqual(1, j1.Id);
-            Assert.AreEqual(2, j2.Id);
+            Assert.AreEqual(j2.Id, j1.Id);
+            Assert.AreEqual(j1.Id, j2.Id);
         }
 
         /*

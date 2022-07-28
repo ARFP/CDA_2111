@@ -8,6 +8,7 @@ namespace ECF2111Test.Lib
 {
     public enum Levels
     {
+        [Display(Name = "Sans diplôme", ShortName = "Toto")]
         InfBac = 30,
         Bac = 40,
         BacPlus1 = 50,

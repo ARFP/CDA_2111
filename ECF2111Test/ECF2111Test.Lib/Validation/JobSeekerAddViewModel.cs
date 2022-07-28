@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace ECF2111Test.Lib.Validation
 {
-    internal class JobSeekerAddViewModel : JobSeeker 
+    public class JobSeekerAddViewModel : JobSeeker 
     {
         private readonly Regex regexNames = new Regex(@"^[a-zA-Z]+(?:\s[a-zA-Z]+)*$");
 

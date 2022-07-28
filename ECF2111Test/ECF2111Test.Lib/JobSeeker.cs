@@ -8,12 +8,18 @@ namespace ECF2111Test.Lib
 {
     public class JobSeeker
     {
+        private const string regexName = @"^[a-zA-Z]+(?:\s[a-zA-Z]+)*$";
+
         private static int lastId = 0;
 
+        [Key]
         public int Id { get; set; }
 
+        [Required]
+        [RegularExpression(regexName)]
         public string Name { get; set; }
 
+        [RegularExpression(regexName)]
         public string Firstname { get; set; }
 
         public int RegistrationYear { get; set; }
@@ -34,12 +40,7 @@ namespace ECF2111Test.Lib
 
         public JobSeeker(JobSeeker other): this() // "this()" pour initialiser l'Id
         {
-            /**
-             * On retire cette instruction:
-             * on souhaite un Id différent par instance
-             */
-            //Id = other.Id;
-
+            Id = other.Id;
             Name = other.Name;
             Firstname = other.Firstname;
             RegistrationYear = other.RegistrationYear;
