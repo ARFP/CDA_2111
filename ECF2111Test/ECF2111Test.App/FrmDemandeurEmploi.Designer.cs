@@ -53,6 +53,7 @@
             // 
             // cbxLevel
             // 
+            this.cbxLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxLevel.FormattingEnabled = true;
             this.cbxLevel.Location = new System.Drawing.Point(104, 136);
             this.cbxLevel.Name = "cbxLevel";
@@ -65,6 +66,7 @@
             this.tbxYearDip.Name = "tbxYearDip";
             this.tbxYearDip.Size = new System.Drawing.Size(154, 23);
             this.tbxYearDip.TabIndex = 5;
+            this.tbxYearDip.Text = "2020";
             // 
             // tbxDiploma
             // 
@@ -72,6 +74,7 @@
             this.tbxDiploma.Name = "tbxDiploma";
             this.tbxDiploma.Size = new System.Drawing.Size(154, 23);
             this.tbxDiploma.TabIndex = 4;
+            this.tbxDiploma.Text = "Titi";
             // 
             // tbxFname
             // 
@@ -79,6 +82,7 @@
             this.tbxFname.Name = "tbxFname";
             this.tbxFname.Size = new System.Drawing.Size(154, 23);
             this.tbxFname.TabIndex = 2;
+            this.tbxFname.Text = "Tata";
             // 
             // label6
             // 
@@ -131,6 +135,7 @@
             this.tbxLname.Name = "tbxLname";
             this.tbxLname.Size = new System.Drawing.Size(154, 23);
             this.tbxLname.TabIndex = 1;
+            this.tbxLname.Text = "Toto";
             // 
             // FrmDemandeurEmploi
             // 
@@ -149,7 +154,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbxLname);
             this.Name = "FrmDemandeurEmploi";
-            this.Text = "TotoIsBack";
+            this.Text = "Ajouter un demandeur d\'emploi";
             this.Load += new System.EventHandler(this.TotoIsBack_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

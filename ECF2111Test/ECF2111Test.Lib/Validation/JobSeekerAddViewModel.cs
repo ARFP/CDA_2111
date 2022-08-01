@@ -13,31 +13,49 @@ namespace ECF2111Test.Lib.Validation
 
         private readonly Regex regexDiploma = new Regex(@"^[^\?<>]+$");
 
-
+        public JobSeekerAddViewModel() { }
 
         public bool IsValid()
         {
-            if(!regexNames.IsMatch(Name) || !regexNames.IsMatch(Firstname))
-            {
-                return false;
-            }
-
-            if(!regexDiploma.IsMatch(LastDiplomaName))
-            {
-                return false;
-            }
-
             RegistrationYear = DateTime.Now.Year;
 
-
-            if(LastDiplomaYear < RegistrationYear-60 || LastDiplomaYear > RegistrationYear+2)
+            if (IsValidName() && IsValidFirstName() && IsValidDiplomaName())
             {
-                return false;
+                if (LastDiplomaYear != null && String.IsNullOrEmpty(LastDiplomaName))
+                {
+                    throw new InvalidDataException("Le nom du diplôme est requis si l'année est précisée");
+                }
+                if(LastDiplomaYear is null && !String.IsNullOrEmpty(LastDiplomaName))
+                {
+                    throw new InvalidDataException("La date du diplôme est requise si le nom est précisé");
+                }
+
+                return true;
             }
 
+            return false;
 
-            return true;
         }
-        
+
+        public bool IsValidName()
+        {
+            return regexNames.IsMatch(Name);
+        }
+
+        public bool IsValidFirstName()
+        {
+            return regexNames.IsMatch(Firstname);
+        }
+
+        public bool IsValidLastDiplomaYear()
+        {
+            return (LastDiplomaYear > RegistrationYear - 60 && LastDiplomaYear < RegistrationYear + 2);
+        }
+
+        public bool IsValidDiplomaName()
+        {
+            return String.IsNullOrEmpty(LastDiplomaName) || regexDiploma.IsMatch(LastDiplomaName);
+        }
+
     }
 }

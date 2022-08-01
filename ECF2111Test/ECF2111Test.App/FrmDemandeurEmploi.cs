@@ -26,6 +26,7 @@ namespace ECF2111Test.App
         {
             //cbxLevel.DataSource = Enum.GetNames(typeof(Levels));
             cbxLevel.DataSource = Enum.GetNames<Levels>();
+            cbxLevel.SelectedIndex = 0;
         }
 
         private void btnValidate_Click(object sender, EventArgs e)
@@ -38,18 +39,51 @@ namespace ECF2111Test.App
                     Firstname = tbxFname.Text,
                     Level = (Levels)Enum.Parse<Levels>(cbxLevel.SelectedItem.ToString()),
                     LastDiplomaName = tbxDiploma.Text,
-                    LastDiplomaYear = Convert.ToInt32(tbxYearDip.Text),
+                    LastDiplomaYear = String.IsNullOrEmpty(tbxYearDip.Text) ? null : Convert.ToInt32(tbxYearDip.Text),
                     RegistrationYear = DateTime.Now.Year
                 };
 
                 if (viewModel.IsValid())
                 {
                     jobSeeker = new JobSeeker(viewModel);
+                    
+                    FrmDemandeurValide frm = new FrmDemandeurValide();
+                    frm.setParentForm(this);
+                    frm.SetJobSeeker(jobSeeker);
+                    frm.Show();
+                    this.Hide();
                 }
+                else
+                {
+                    DisplayErrors();
+                }
+
             }
             catch(Exception ex)
             {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
+        private void DisplayErrors()
+        {
+            SetControlError(tbxFname, viewModel.IsValidFirstName());
+            SetControlError(tbxLname, viewModel.IsValidName());
+            SetControlError(tbxDiploma, viewModel.IsValidDiplomaName());
+            SetControlError(tbxYearDip, viewModel.IsValidLastDiplomaYear());
+        }
+
+        private void SetControlError(TextBox control, bool result)
+        {
+            if(result)
+            {
+                control.ForeColor = Color.Blue;
+                control.Font = new Font(control.Font, FontStyle.Regular);
+            }
+            else
+            {
+                control.ForeColor = Color.Red;
+                control.Font = new Font(control.Font, FontStyle.Bold);
             }
         }
     }

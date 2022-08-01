@@ -16,10 +16,8 @@ namespace ECF2111Test.Lib
         public int Id { get; set; }
 
         [Required]
-        [RegularExpression(regexName)]
         public string Name { get; set; }
 
-        [RegularExpression(regexName)]
         public string Firstname { get; set; }
 
         public int RegistrationYear { get; set; }
@@ -30,7 +28,7 @@ namespace ECF2111Test.Lib
 
         public int? LastDiplomaYear { get; set; }
 
-        public string Employability {  get { return Level + "%";  } }
+        public string Employability {  get { return ((int)Level) + "%";  } }
 
 
         public JobSeeker()
@@ -38,7 +36,7 @@ namespace ECF2111Test.Lib
             Id = ++lastId;
         }
 
-        public JobSeeker(JobSeeker other): this() // "this()" pour initialiser l'Id
+        public JobSeeker(JobSeeker other) // "this()" pour initialiser l'Id
         {
             Id = other.Id;
             Name = other.Name;
