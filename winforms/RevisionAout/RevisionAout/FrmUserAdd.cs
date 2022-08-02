@@ -1,5 +1,5 @@
-﻿using RevisionAout.Dao;
-using RevisionAout.ViewModels;
+﻿using RevisionAout.Models;
+using RevisionAout.Dao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,15 +24,17 @@ namespace RevisionAout
 
         private void button1_Click(object sender, EventArgs e)
         {
-            UserAddViewModel newUser = new UserAddViewModel()
+            User newUser = new User()
             {
                 UserName = textBox1.Text,
                 Password = textBox2.Text,
             };
 
+            // VALIDATIONS ICI
+
             try
             {
-                uwu.Adduser(newUser);
+                
             }
             catch(Exception ex)
             {

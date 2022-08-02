@@ -19,6 +19,14 @@ namespace RevisionAout.Models
         [MinLength(2)]
         public string Password { get; set; }
 
+        /// <summary></summary>
+        /// <remarks></remarks>
+        /// <value></value>
         public Role Role { get; set; }
+
+        public override string ToString()
+        {
+            return UserName;
+        }
     }
 }

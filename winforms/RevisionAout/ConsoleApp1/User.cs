@@ -1,14 +1,13 @@
-﻿using RevisionAout.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RevisionAout.ViewModels
+namespace ConsoleApp1
 {
-    public class UserListViewModel
+    public class User
     {
         public int Id { get; set; }
 
@@ -16,14 +15,14 @@ namespace RevisionAout.ViewModels
         [MinLength(2)]
         public string UserName { get; set; }
 
-        public Role Role { get; set; }
+        [Required]
+        [MinLength(2)]
+        public string Password { get; set; }
 
-        public UserListViewModel() : this("default") { }
 
-        public UserListViewModel(string name)
+        public override string ToString()
         {
-
+            return UserName + " : " + base.ToString(); ;
         }
-
     }
 }
