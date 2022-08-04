@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ECF_UNTEL_EXAMPLE.Domain.Cpu">
+    <Position X="6.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAQAIAAAAAAAAAAQAAIAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Cpu.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Family" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ECF_UNTEL_EXAMPLE.Domain.DomainData">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>DomainData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ECF_UNTEL_EXAMPLE.Domain.Family">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Family.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Arch" />
+    </ShowAsAssociation>
+  </Class>
+  <Enum Name="ECF_UNTEL_EXAMPLE.Domain.Architecture">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Architecture.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
